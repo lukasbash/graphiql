@@ -113,9 +113,7 @@ Cypress.Commands.add('typeInEditor', (text, options = {}) => {
   // requested one, then target it (Variables is index 0, Headers index 1).
   const index = editor === 'variables' ? 0 : 1;
   cy.contains(editor === 'variables' ? 'Variables' : 'Headers').click();
-  cy.get('.graphiql-editor-tool .view-lines')
-    .eq(index)
-    .realClick();
+  cy.get('.graphiql-editor-tool .view-lines').eq(index).realClick();
   realTypeInFocusedEditor(text, delay);
 });
 
