@@ -84,12 +84,7 @@ export class WorkerManager {
               completionSettings.__experimental__fillLeafsOnComplete,
           },
         };
-        // monaco-editor >= 0.53 no longer loads a worker module by `moduleId`
-        // and no longer delivers `createData` through `editor.createWebWorker()`
-        // (see microsoft/monaco-editor's worker loading rewrite). We now build
-        // the worker ourselves via `MonacoEnvironment.getWorker` and configure
-        // it explicitly once it's ready, via `GraphQLWorker#initialize`.
-        const worker = MonacoEnvironment?.getWorker?.(
+        const worker = globalThis.MonacoEnvironment?.getWorker?.(
           'monaco-graphql/esm/GraphQLWorker.js',
           languageId,
         );
@@ -100,9 +95,8 @@ export class WorkerManager {
           );
         }
         this._worker = editor.createWebWorker<GraphQLWorker>({ worker });
-        const client = this._worker.getProxy();
-        this._client = client;
-        await client.then(resolved => resolved.initialize(createData));
+        this._client = this._worker.getProxy();
+        await this._client.then(client => client.initialize(createData));
       } catch (error) {
         // eslint-disable-next-line no-console
         console.error('error loading worker', error);

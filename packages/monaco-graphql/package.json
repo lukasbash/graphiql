@@ -68,7 +68,7 @@
     "esm"
   ],
   "scripts": {
-    "build": "tsgo -p tsconfig.json && tsgo -p tsconfig.esm.json && node ../../resources/patch-monaco-editor-type.mts",
+    "build": "tsgo -p tsconfig.json && tsgo -p tsconfig.esm.json",
     "types:check": "tsgo --noEmit",
     "test": "vitest run"
   },

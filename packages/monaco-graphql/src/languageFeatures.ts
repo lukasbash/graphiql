@@ -128,9 +128,6 @@ export class DiagnosticsAdapter {
     editor.setModelMarkers(editor.getModel(resource)!, languageId, diagnostics);
 
     if (variablesUris) {
-      // only import the JSON mode if users configure it
-      await import('monaco-editor/language/json/monaco.contribution.js');
-
       if (!variablesUris.length) {
         throw new Error('No variables URI strings provided to validate');
       }
