@@ -176,9 +176,6 @@ importers:
       vite:
         specifier: 8.2.2
         version: 8.2.2(@types/node@24.12.2)(esbuild@0.28.2)(jiti@2.6.1)(terser@5.46.2)(yaml@2.9.0)
-      vite-plugin-monaco-editor:
-        specifier: ^1
-        version: 1.1.0(monaco-editor@0.56.0)
 
   examples/graphiql-vite-react-router:
     dependencies:
@@ -11287,11 +11284,6 @@ packages:
       vite:
         optional: true
 
-  vite-plugin-monaco-editor@1.1.0:
-    resolution: {integrity: sha512-IvtUqZotrRoVqwT0PBBDIZPNraya3BxN/bfcNfnxZ5rkJiGcNtO5eAOWWSgT7zullIAEqQwxMU83yL9J5k7gww==}
-    peerDependencies:
-      monaco-editor: '>=0.33.0'
-
   vite-plugin-svgr@4.3.0:
     resolution: {integrity: sha512-Jy9qLB2/PyWklpYy0xk0UU3TlU0t2UMpJXZvf+hWII1lAmRHrOUKi11Uw8N3rxoNk7atZNYO3pR3vI1f7oi+6w==}
     peerDependencies:
@@ -22395,10 +22387,6 @@ snapshots:
       - '@types/node'
       - rollup
       - supports-color
-
-  vite-plugin-monaco-editor@1.1.0(monaco-editor@0.56.0):
-    dependencies:
-      monaco-editor: 0.56.0
 
   vite-plugin-svgr@4.3.0(rollup@4.40.1)(vite@8.2.2(@types/node@24.12.2)(esbuild@0.28.2)(jiti@2.6.1)(terser@5.46.2)(yaml@2.9.0)):
     dependencies:
