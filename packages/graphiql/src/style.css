@@ -1,4 +1,4 @@
-/* Monaco doesn't export its aggregate stylesheet. This physical import is only needed for the CDN bundle. */
+/* Monaco doesn't export its aggregate CSS file. This physical import is only needed for the CDN bundle. */
 @import '../node_modules/monaco-editor/dev/vs/editor/editor.main.css';
 
 @import '@graphiql/react/font/roboto.css';
