@@ -56,7 +56,6 @@ describe('monaco-editor', () => {
         "assets/graphql.js",
         "assets/graphqlMode.js",
         "assets/index.css",
-        "assets/jsonMode.css",
         "assets/jsonMode.js",
         "index.html",
         "index.js",
