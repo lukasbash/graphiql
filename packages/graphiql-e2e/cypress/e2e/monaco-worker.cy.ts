@@ -33,6 +33,7 @@ describe('Monaco GraphQL worker', () => {
         .getEditors()
         .find(candidate => candidate.getModel() === model)!;
 
+      codeEditor.trigger('test', 'editor.action.hideHover', {});
       model.setValue('{ id }');
       codeEditor.setPosition({ lineNumber: 1, column: 4 });
       codeEditor.focus();
