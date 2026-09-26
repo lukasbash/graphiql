@@ -42,7 +42,8 @@ It provides the following features while editing GraphQL files:
 For now, we use `language` id of `graphql` until we can ensure we can dovetail
 nicely with the official `graphql` language ID.
 
-`monaco-graphql@2` supports `monaco-editor` 0.56. Applications must configure
+`monaco-graphql@2` supports `monaco-editor` 0.56 and 0.57. Applications must
+configure
 `globalThis.MonacoEnvironment.getWorker` to return the GraphQL worker when the
 worker label is `graphql`.
 

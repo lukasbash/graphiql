@@ -492,9 +492,9 @@ Two things to know if you embed GraphiQL:
 
 To opt out of cursor tracking, pin the operation with the `operationName` prop on `<GraphiQL>`; an explicit `operationName` overrides what the cursor would otherwise select.
 
-## Monaco Editor 0.56 and worker setup
+## Monaco Editor 0.56 and 0.57 worker setup
 
-GraphiQL 6 upgrades Monaco Editor to 0.56. This also moves `monaco-graphql` to its next major version because Monaco changed its worker API and replaced the legacy `monaco-editor/esm/vs/*` deep imports with exported entry points.
+GraphiQL 6 supports Monaco Editor 0.56 and 0.57, and installs 0.57 by default. This also moves `monaco-graphql` to its next major version because Monaco changed its worker API and replaced the legacy `monaco-editor/esm/vs/*` deep imports with exported entry points.
 
 If you use one of GraphiQL's worker setup helpers, keep the same import. The helpers now load the Monaco 0.56 worker entry points for you:
 
@@ -506,7 +506,7 @@ import 'graphiql/setup-workers/vite';
 
 If your application installs or configures Monaco directly, make these changes:
 
-1. Upgrade `monaco-editor` to `0.56.x`. `monaco-graphql@2` accepts `>=0.56.0 <0.57`.
+1. Upgrade `monaco-editor` to `0.57.x`, or remain on `0.56.x` if needed. `monaco-graphql@2` accepts `>=0.56.0 <0.58.0`.
 2. Replace `monaco-editor/esm/vs/*` imports with Monaco's exported entry points. For example, import the editor worker from `monaco-editor/editor/editor.worker` and the JSON worker from `monaco-editor/languages/features/json/json.worker`.
 3. Configure `globalThis.MonacoEnvironment.getWorker` to return the GraphQL worker for the `graphql` label. Returning a URL from `getWorkerUrl` is not sufficient for the new worker contract.
 
