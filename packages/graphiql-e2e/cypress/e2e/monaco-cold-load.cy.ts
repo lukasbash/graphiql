@@ -4,7 +4,8 @@ describe('Monaco cold load', () => {
       request.continue(response => {
         if (
           typeof response.body === 'string' &&
-          response.body.includes('autoClosingPairs')
+          response.body.includes('autoClosingPairs') &&
+          response.body.includes('defaultToken')
         ) {
           response.setDelay(2_000);
         }
