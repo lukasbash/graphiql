@@ -496,7 +496,7 @@ To opt out of cursor tracking, pin the operation with the `operationName` prop o
 
 GraphiQL 6 supports Monaco Editor 0.56 and 0.57, and installs 0.57 by default. This also moves `monaco-graphql` to its next major version because Monaco changed its worker API and replaced the legacy `monaco-editor/esm/vs/*` deep imports with exported entry points.
 
-If you use one of GraphiQL's worker setup helpers, keep the same import. The helpers now load the Monaco 0.56 worker entry points for you:
+If you use one of GraphiQL's worker setup helpers, keep the same import. The helpers now load the Monaco 0.57 worker entry points for you:
 
 ```ts
 import 'graphiql/setup-workers/vite';
